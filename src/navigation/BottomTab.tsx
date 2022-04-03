@@ -5,8 +5,10 @@ import {
 import React from 'react';
 import {bottomTabScreens} from './routes';
 import {BottomTabRoutes, ScreenOptions} from './types';
-import {IconsFA} from '@assets/icons';
+import {IconsFA, IconsFou, IconsIC} from '@assets/icons';
 import {useTheme} from '@theme';
+import {Pressable, StyleSheet, View} from 'react-native';
+import {getSize} from '@utils/reponsive';
 const Tab = createBottomTabNavigator<BottomTabRoutes>();
 
 const BottomTabNavigation = () => {
@@ -18,48 +20,48 @@ const BottomTabNavigation = () => {
     Home: {
       tabBarLabel: 'Home',
       tabBarIcon: ({focused}) => (
-        <IconsFA
-          name="home"
+        <IconsIC
+          name={focused ? 'ios-home-sharp' : 'ios-home-outline'}
           size={24}
           color={focused ? Colors.primary : Colors.black}
         />
       ),
     },
-    MyOrders: {
+    Stats: {
       tabBarLabel: 'Stats',
       tabBarIcon: ({focused}) => (
-        <IconsFA
-          name="receipt"
+        <IconsIC
+          name={focused ? 'stats-chart' : 'stats-chart-outline'}
           size={24}
           color={focused ? Colors.primary : Colors.black}
         />
       ),
     },
-    Likes: {
+    Search: {
       tabBarLabel: 'Search',
       tabBarIcon: ({focused}) => (
-        <IconsFA
-          name="heart"
+        <IconsIC
+          name={focused ? 'search' : 'search-outline'}
           size={24}
-          color={focused ? Colors.orange : Colors.black}
+          color={focused ? Colors.primary : Colors.black}
         />
       ),
     },
-    Notifications: {
+    Profile: {
       tabBarLabel: 'Profile',
       tabBarIcon: ({focused}) => (
         <IconsFA
-          name="bell"
+          name={focused ? 'user' : 'user-o'}
           size={24}
           color={focused ? Colors.primary : Colors.black}
         />
       ),
     },
-    Me: {
+    More: {
       tabBarLabel: 'More',
       tabBarIcon: ({focused}) => (
-        <IconsFA
-          name="user"
+        <IconsFou
+          name="indent-more"
           size={24}
           color={focused ? Colors.primary : Colors.black}
         />
@@ -74,6 +76,21 @@ const BottomTabNavigation = () => {
         headerShown: false,
         tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: Colors.black,
+        tabBarStyle: {
+          height: getSize.v(80),
+        },
+        tabBarItemStyle: {
+          paddingTop: getSize.m(20),
+        },
+        tabBarButton: ({accessibilityState, style, children, ...props}) => (
+          <Pressable
+            accessibilityState={accessibilityState}
+            {...props}
+            style={style}>
+            {accessibilityState?.selected && <View style={styles.bottom} />}
+            {children}
+          </Pressable>
+        ),
       }}>
       {bottomTabScreens.map(({name, component}: any) => (
         <Tab.Screen
@@ -88,3 +105,15 @@ const BottomTabNavigation = () => {
 };
 
 export default BottomTabNavigation;
+
+const styles = StyleSheet.create({
+  bottom: {
+    position: 'absolute',
+    top: 0,
+    height: 8,
+    width: '50%',
+    backgroundColor: 'blue',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+});

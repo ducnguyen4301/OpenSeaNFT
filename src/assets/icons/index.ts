@@ -9,6 +9,7 @@ import IconsMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconsMI from 'react-native-vector-icons/MaterialIcons';
 import IconsOI from 'react-native-vector-icons/Octicons';
 import IconsEO from 'react-native-vector-icons/Entypo';
+import IconsFou from 'react-native-vector-icons/Foundation';
 
 export {
   IconsAD,
@@ -22,4 +23,5 @@ export {
   IconsMI,
   IconsOI,
   IconsEO,
+  IconsFou,
 };
