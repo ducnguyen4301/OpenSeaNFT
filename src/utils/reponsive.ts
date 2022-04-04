@@ -1,6 +1,6 @@
 import {Dimensions} from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('screen');
 console.log(width, height);
 //Iphone X/XS/11 Pro
 const DESIGN_WIDTH = 392;

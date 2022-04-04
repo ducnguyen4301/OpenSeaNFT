@@ -6,13 +6,12 @@ import React from 'react';
 import {bottomTabScreens} from './routes';
 import {BottomTabRoutes, ScreenOptions} from './types';
 import {IconsFA, IconsFou, IconsIC} from '@assets/icons';
-import {useTheme} from '@theme';
-import {Pressable, StyleSheet, View} from 'react-native';
+import {Platform, Pressable, StyleSheet, View} from 'react-native';
 import {getSize} from '@utils/reponsive';
+import {Colors} from '@theme/color';
 const Tab = createBottomTabNavigator<BottomTabRoutes>();
 
 const BottomTabNavigation = () => {
-  const {Colors} = useTheme();
   const screenOptions: ScreenOptions<
     BottomTabRoutes,
     BottomTabNavigationOptions
@@ -77,7 +76,7 @@ const BottomTabNavigation = () => {
         tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: Colors.black,
         tabBarStyle: {
-          height: getSize.v(80),
+          height: Platform.OS === 'ios' ? getSize.v(80) : getSize.v(57),
         },
         tabBarItemStyle: {
           paddingTop: getSize.m(20),
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
     top: 0,
     height: 8,
     width: '50%',
-    backgroundColor: 'blue',
+    backgroundColor: Colors.primary,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
