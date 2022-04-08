@@ -16,4 +16,12 @@ export const Colors: ThemeColors = {
   oceanBlue: '#0077b6',
   veryLightPink: '#bcbcbc',
   lightBlue: '#96d3f2',
+  black: '#000',
+  medium: '#ccc',
+  light: '#eee',
+  online: 'green',
+  grey: 'gray',
+  red: 'red',
+  purple: 'purple',
+  cyan: '#5865F2',
 };
