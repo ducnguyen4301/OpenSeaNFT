@@ -1,22 +1,49 @@
 import React from 'react';
-import {View, StyleSheet, Text, StyleProp, ViewStyle} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  StyleProp,
+  ViewStyle,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import {CateItemType} from './types';
 
 interface SectionProps {
   titleStyle?: StyleProp<ViewStyle>;
   containerStyle?: StyleProp<ViewStyle>;
-  item: CateItemType;
+  item?: CateItemType;
+  title?: string;
+  DataComponent?: any;
+  data?: any;
+  flatlist?: any;
 }
 
 const Section: React.FC<SectionProps> = ({
-  item,
-  titleStyle,
+  title,
+  DataComponent,
+  data,
   containerStyle,
+  titleStyle,
+  flatlist,
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      {item.title && (
-        <Text style={[styles.sectionTitle, titleStyle]}>{item.title}</Text>
+      {title && <Text style={[styles.sectionTitle, titleStyle]}>{title}</Text>}
+      {flatlist ? (
+        <FlatList
+          data={data}
+          renderItem={({item}) => <DataComponent {...item} />}
+          keyExtractor={(item, index) => index.toString()}
+          numColumns={2}
+        />
+      ) : (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {data.map((item: any, index: any) => (
+            <DataComponent key={index} {...item} scrollable />
+          ))}
+        </ScrollView>
       )}
     </View>
   );
