@@ -5,10 +5,10 @@ import styles from './styles';
 import {IconsMCI} from '@assets/icons';
 import Avatar from '../Avatar';
 interface StatsProps {
-  order: string;
+  order: number;
   image: any;
   username: string;
-  price: any;
+  price: number;
   type: string;
 }
 

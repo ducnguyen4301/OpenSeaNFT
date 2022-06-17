@@ -5,7 +5,7 @@ import {Card, Section} from '@components/Home';
 import {Colors} from '@theme/color';
 import data from 'data';
 import NFTCard from '@components/NFT/NFTCard';
-import UserProfileCard from '@components/Profile';
+import UserProfile from '@components/UserProfile';
 const Home = () => {
   return (
     <SafeAreaView>
@@ -19,7 +19,7 @@ const Home = () => {
         />
         <Section
           title="Trending collections"
-          DataComponent={UserProfileCard}
+          DataComponent={UserProfile}
           data={data.users}
         />
         <Section

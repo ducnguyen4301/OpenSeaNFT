@@ -1,8 +1,8 @@
-import {Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {Colors} from '@theme/color';
 import {navigate} from '../../navigation/NavigationServices';
 import {CateItemType} from './types';
+import {styles} from './Styles/CardStyles';
 
 const Card: React.FC<CateItemType> = ({title, image, size, type}) => {
   const handleNavigation = () => {
@@ -33,30 +33,5 @@ const Card: React.FC<CateItemType> = ({title, image, size, type}) => {
     </TouchableOpacity>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 10,
-    marginVertical: 20,
-  },
-  image: {
-    borderRadius: 20,
-  },
-  defaultTitle: {
-    color: Colors.black,
-    fontSize: 18,
-    letterSpacing: 1,
-    marginTop: 10,
-    marginLeft: 5,
-  },
-  categoryTitle: {
-    position: 'absolute',
-    color: Colors.white,
-    fontWeight: 'bold',
-    fontSize: 20,
-    width: 100,
-    bottom: 20,
-    left: 20,
-  },
-});
 
 export default Card;

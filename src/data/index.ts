@@ -48,7 +48,43 @@ export default {
       size: 210,
     },
   ],
-  users: [],
+  users: [
+    {
+      title: 'Getijde by Bart',
+      username: 'ArtBlocks_Admin',
+      coverImage: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      avatar: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      verified: true,
+    },
+    {
+      title: 'The Sandbox',
+      username: 'TheSandboxGame',
+      coverImage: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      avatar: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      verified: false,
+    },
+    {
+      title: 'adidas Originals',
+      username: 'adidasOriginals',
+      coverImage: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      avatar: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      verified: true,
+    },
+    {
+      title: 'Decentraland',
+      username: 'decentraland',
+      coverImage: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      avatar: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      verified: true,
+    },
+    {
+      title: 'iNFT Personality',
+      username: 'Alethea_AI',
+      coverImage: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      avatar: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      verified: false,
+    },
+  ],
   nfts: [
     {
       user: {

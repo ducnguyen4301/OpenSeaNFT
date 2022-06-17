@@ -1,13 +1,13 @@
 import React from 'react';
 import {
   View,
-  StyleSheet,
   Text,
   StyleProp,
   ViewStyle,
   FlatList,
   ScrollView,
 } from 'react-native';
+import {styles} from './Styles/SectionStyles';
 import {CateItemType} from './types';
 
 interface SectionProps {
@@ -48,19 +48,5 @@ const Section: React.FC<SectionProps> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginVertical: 15,
-  },
-  sectionTitle: {
-    marginBottom: 20,
-    marginLeft: 10,
-    fontWeight: 'bold',
-    fontSize: 25,
-    letterSpacing: 1,
-  },
-});
 
 export default Section;

@@ -6,7 +6,13 @@ import styles from './styles';
 import {AvatarProps} from './types';
 import {useTheme} from '@theme';
 
-const Avatar: React.FC<AvatarProps> = ({image, size, online, circle}) => {
+const Avatar: React.FC<AvatarProps> = ({
+  image,
+  size = 50,
+  isOnline,
+  isCircle,
+  ImageStyle,
+}) => {
   const {Colors} = useTheme();
   return (
     <View
@@ -16,8 +22,9 @@ const Avatar: React.FC<AvatarProps> = ({image, size, online, circle}) => {
           width: size,
           height: size,
         },
+        ImageStyle,
       ]}>
-      {circle && online && (
+      {isCircle && isOnline && (
         <IconsMCI
           style={[
             styles.icon,
@@ -38,7 +45,7 @@ const Avatar: React.FC<AvatarProps> = ({image, size, online, circle}) => {
           {
             width: size,
             height: size,
-            borderRadius: circle ? size / 2 : size / 5,
+            borderRadius: isCircle ? size / 2 : size / 5,
           },
         ]}
       />
