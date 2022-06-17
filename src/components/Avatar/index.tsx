@@ -11,6 +11,7 @@ const Avatar: React.FC<AvatarProps> = ({
   size = 50,
   isOnline,
   isCircle,
+  isVerify,
   ImageStyle,
 }) => {
   const {Colors} = useTheme();
@@ -24,19 +25,33 @@ const Avatar: React.FC<AvatarProps> = ({
         },
         ImageStyle,
       ]}>
-      {isCircle && isOnline && (
-        <IconsMCI
-          style={[
-            styles.icon,
-            {
-              left: size * 0.75,
-              top: size * 0.02,
-            },
-          ]}
-          name="circle"
-          size={15}
-          color={Colors.online}
-        />
+      {isCircle && isOnline && isVerify && (
+        <>
+          <IconsMCI
+            style={[
+              styles.icon,
+              {
+                left: size * 0.68,
+                top: size * 0.02,
+              },
+            ]}
+            name="circle"
+            size={12}
+            color={Colors.online}
+          />
+          <IconsMCI
+            style={[
+              styles.icon,
+              {
+                left: size * 0.68,
+                bottom: size * 0.02,
+              },
+            ]}
+            name="check-decagram"
+            size={17}
+            color={Colors.primary}
+          />
+        </>
       )}
       <Image
         source={{uri: image}}

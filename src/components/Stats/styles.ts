@@ -15,6 +15,7 @@ export default StyleSheet.create({
     fontSize: 20,
   },
   details: {
+    marginLeft: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -36,8 +37,9 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   priceDetails: {
+    justifyContent: 'flex-end',
+    alignContent: 'flex-end',
     flexDirection: 'row',
-    alignItems: 'center',
   },
   price: {
     fontWeight: 'bold',

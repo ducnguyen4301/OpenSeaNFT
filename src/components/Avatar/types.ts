@@ -5,5 +5,6 @@ export interface AvatarProps {
   size?: number;
   isOnline?: boolean;
   isCircle?: boolean;
+  isVerify?: boolean;
   ImageStyle?: StyleProp<ViewStyle>;
 }

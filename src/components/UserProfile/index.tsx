@@ -32,7 +32,7 @@ const UserProfile: React.FC<UserProfleProps> = ({
         },
       ]}
       onPress={() =>
-        navigate('Profile1', {
+        navigate('UserProfile', {
           user: {
             title,
             image: avatar,

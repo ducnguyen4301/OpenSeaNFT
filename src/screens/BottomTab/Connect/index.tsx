@@ -4,10 +4,11 @@ import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {IconsEO, IconsIC, IconsMCI} from '@assets/icons';
 import {Colors} from '@theme/color';
 import localImages from '@assets';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Connect = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={['top']} style={styles.container}>
       <View style={styles.top}>
         <IconsEO name="wallet" size={100} color={Colors.primary} />
         <Text style={styles.title}>Connect with wallet</Text>
@@ -36,7 +37,7 @@ const Connect = () => {
           <Text style={styles.learnMore}>Learn more</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

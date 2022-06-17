@@ -21,6 +21,5 @@ export const bottomTabScreens = [
   {component: BottomTab.Stats, name: 'Stats'},
   {component: BottomTab.Search, name: 'Search'},
   {component: BottomTab.Connect, name: 'Profile'},
-  {component: BottomTab.Profile, name: 'Profile1'},
   {component: BottomTab.More, name: 'More'},
 ];

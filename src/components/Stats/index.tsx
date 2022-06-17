@@ -5,11 +5,11 @@ import styles from './styles';
 import {IconsMCI} from '@assets/icons';
 import Avatar from '../Avatar';
 interface StatsProps {
-  order: number;
-  image: any;
-  username: string;
-  price: number;
-  type: string;
+  order?: number;
+  image?: any;
+  username?: string;
+  price?: number;
+  type?: string;
 }
 
 const Stats: React.FC<StatsProps> = ({order, image, username, price, type}) => {
@@ -17,7 +17,13 @@ const Stats: React.FC<StatsProps> = ({order, image, username, price, type}) => {
     <View style={styles.container}>
       {type === 'rankings' && <Text style={styles.order}>{order}</Text>}
       <View style={styles.details}>
-        <Avatar image={image} size={50} circle={type === 'rankings'} online />
+        <Avatar
+          image={image}
+          size={50}
+          isCircle={type === 'rankings'}
+          isOnline
+          isVerify
+        />
         <View style={styles.userDetails}>
           <Text style={styles.username}>{username}</Text>
           <TouchableOpacity style={styles.more}>

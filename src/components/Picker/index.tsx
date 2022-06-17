@@ -5,8 +5,8 @@ import {IconsEO} from '@assets/icons';
 import {Colors} from '@theme/color';
 
 interface PickerProps {
-  label: string;
-  leftItem: any;
+  label?: string;
+  leftItem?: JSX.Element;
 }
 const Picker: React.FC<PickerProps> = ({label, leftItem}) => {
   return (
