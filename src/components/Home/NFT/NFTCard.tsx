@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {IconsMCI} from '@assets/icons';
 import styles from './styles';
 import {Colors} from '@theme/color';
 
 import {navigate} from 'navigation/NavigationServices';
+import FastImage from 'react-native-fast-image';
 
 interface NFTCardProps {
   user: {username: any; verified: any};
@@ -39,7 +40,7 @@ const NFTCard: React.FC<NFTCardProps> = ({
         })
       }>
       <View style={styles.image}>
-        <Image source={{uri: image}} style={styles.image} />
+        <FastImage source={{uri: image}} style={styles.image} />
       </View>
       <View>
         <View style={styles.userDetails}>

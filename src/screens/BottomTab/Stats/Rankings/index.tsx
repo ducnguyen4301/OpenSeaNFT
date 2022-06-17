@@ -3,7 +3,8 @@ import Picker from '@components/Picker';
 import Stats from '@components/Stats';
 import {Colors} from '@theme/color';
 import React from 'react';
-import {View, Image, ScrollView, StyleSheet, SafeAreaView} from 'react-native';
+import {View, ScrollView, StyleSheet, SafeAreaView} from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 const Rankings = () => {
   return (
@@ -11,7 +12,7 @@ const Rankings = () => {
       <View style={styles.top}>
         <Picker
           leftItem={
-            <Image
+            <FastImage
               source={{
                 uri:
                   'https://picsum.photos/200?random=' +

@@ -1,8 +1,9 @@
-import {Text, Image, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {navigate} from '../../navigation/NavigationServices';
 import {CateItemType} from './types';
 import {styles} from './Styles/CardStyles';
+import FastImage from 'react-native-fast-image';
 
 const Card: React.FC<CateItemType> = ({title, image, size, type}) => {
   const handleNavigation = () => {
@@ -14,7 +15,7 @@ const Card: React.FC<CateItemType> = ({title, image, size, type}) => {
   };
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigation}>
-      <Image
+      <FastImage
         source={{uri: image}}
         style={[
           styles.image,

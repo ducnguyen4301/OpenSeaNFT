@@ -4,7 +4,7 @@ import AppHeader from '@components/Header';
 import {Card, Section} from '@components/Home';
 import {Colors} from '@theme/color';
 import data from 'data';
-import NFTCard from '@components/NFT/NFTCard';
+import NFTCard from '@components/Home/NFT/NFTCard';
 import UserProfile from '@components/UserProfile';
 const Home = () => {
   return (

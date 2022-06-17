@@ -1,11 +1,12 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import React from 'react';
 import {Colors} from '@theme/color';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {IconsEO, IconsFA5, IconsIC, IconsMCI} from '@assets/icons';
-import UserActivity from './Activity';
+import UserActivity from './UserActivity';
 import UserItems from './Items';
 import ItemHeader from '@components/Avatar/ItemHeader';
+import styles from './styles';
 const Tab = createMaterialTopTabNavigator();
 const Profile = ({route}: any) => {
   const {
@@ -86,40 +87,5 @@ const Profile = ({route}: any) => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: Colors.white,
-  },
-  icons: {
-    flexDirection: 'row',
-    marginVertical: 20,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-  details: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  detail: {
-    alignItems: 'center',
-  },
-  priceContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  price: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    letterSpacing: 1,
-    marginBottom: 5,
-  },
-  description: {
-    color: Colors.medium,
-    fontWeight: 'bold',
-  },
-});
 
 export default Profile;

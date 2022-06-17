@@ -1,5 +1,5 @@
 import React from 'react';
-import NFTCard from '@components/NFT/NFTCard';
+import NFTCard from '@components/Home/NFT/NFTCard';
 import SearchInput from '@components/Search';
 import {Colors} from '@theme/color';
 import data from 'data';

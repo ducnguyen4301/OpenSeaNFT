@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Image} from 'react-native';
+import {View} from 'react-native';
 
 import {IconsMCI} from '@assets/icons';
 import styles from './styles';
 import {AvatarProps} from './types';
 import {useTheme} from '@theme';
+import FastImage from 'react-native-fast-image';
 
 const Avatar: React.FC<AvatarProps> = ({
   image,
@@ -53,7 +54,7 @@ const Avatar: React.FC<AvatarProps> = ({
           />
         </>
       )}
-      <Image
+      <FastImage
         source={{uri: image}}
         style={[
           styles.image,

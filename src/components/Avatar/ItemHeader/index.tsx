@@ -3,7 +3,8 @@ import {IconsIC, IconsMCI} from '@assets/icons';
 import {StackActions, useNavigation} from '@react-navigation/native';
 import {Colors} from '@theme/color';
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import FastImage from 'react-native-fast-image';
 import Avatar from '../index';
 
 interface ItemHeaderProps {
@@ -35,7 +36,7 @@ const ItemHeader: React.FC<ItemHeaderProps> = ({
         <TouchableOpacity style={[styles.icon, {bottom: 20, right: 20}]}>
           <IconsIC name="share-social-outline" size={30} color={Colors.grey} />
         </TouchableOpacity>
-        <Image
+        <FastImage
           source={{uri: coverImage ? coverImage : image}}
           style={styles.image}
           resizeMode="cover"

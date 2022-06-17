@@ -1,10 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {Colors} from '@theme/color';
 import {navigate} from 'navigation/NavigationServices';
 import {IconsMCI} from '@assets/icons';
 import {styles} from './styles';
+import FastImage from 'react-native-fast-image';
 
 type UserProfleProps = {
   title: string;
@@ -42,7 +43,7 @@ const UserProfile: React.FC<UserProfleProps> = ({
         })
       }>
       <View style={styles.topContainer}>
-        <Image
+        <FastImage
           source={{uri: coverImage}}
           style={[
             styles.coverImage,
@@ -53,7 +54,7 @@ const UserProfile: React.FC<UserProfleProps> = ({
           resizeMode="cover"
         />
       </View>
-      <Image
+      <FastImage
         source={{uri: avatar}}
         style={[
           styles.avatar,
