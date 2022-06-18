@@ -8,7 +8,7 @@ import NFTCard from '@components/Home/NFT/NFTCard';
 import UserProfile from '@components/UserProfile';
 const Home = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex:1}}>
       <AppHeader title="OpenSea" />
       <ScrollView contentContainerStyle={styles.container}>
         <Section DataComponent={Card} data={data.categories} />
