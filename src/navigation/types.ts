@@ -10,10 +10,10 @@ export type RootStackRoutes = {
 
 export type BottomTabRoutes = {
   Home: undefined;
-  Orders: undefined;
-  Likes: undefined;
-  Notification: undefined;
-  Me: undefined;
+  Stats: undefined;
+  Search: undefined;
+  Profile: undefined;
+  More: undefined;
 };
 
 export type RouteNames = keyof RootStackRoutes;

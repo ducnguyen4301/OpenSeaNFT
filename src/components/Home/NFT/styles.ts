@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   image: {
     width: 160,
-    height: 100,
+    height: 155,
     borderRadius: 10,
   },
   userDetails: {

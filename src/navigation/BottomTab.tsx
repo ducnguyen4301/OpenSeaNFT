@@ -76,10 +76,11 @@ const BottomTabNavigation = () => {
         tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: Colors.black,
         tabBarStyle: {
-          height: Platform.OS === 'ios' ? getSize.v(80) : getSize.v(57),
+          height: Platform.OS === 'ios' ? getSize.v(80) : getSize.v(50),
+          paddingHorizontal: getSize.m(20),
         },
         tabBarItemStyle: {
-          paddingTop: getSize.m(20),
+          paddingTop: getSize.m(10),
         },
         tabBarButton: ({accessibilityState, style, children, ...props}) => (
           <Pressable
@@ -109,8 +110,8 @@ const styles = StyleSheet.create({
   bottom: {
     position: 'absolute',
     top: 0,
-    height: 8,
-    width: '50%',
+    height: 5,
+    width: '35%',
     backgroundColor: Colors.primary,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
