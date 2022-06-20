@@ -4,8 +4,13 @@ import {
   TransitionPresets,
 } from '@react-navigation/stack';
 import {useTheme} from '@theme';
-import React from 'react';
-import {commonModalSlides, commonScreens} from './routes';
+import React, {useState} from 'react';
+import {
+  commonModalSlides,
+  commonScreens,
+  notLoggedInScreens,
+  userScreens,
+} from './routes';
 import {RootStackRoutes, ScreenOptions} from './types';
 
 const RootStack = createStackNavigator<RootStackRoutes>();
@@ -26,12 +31,14 @@ const RootStackNavigation = () => {
     },
     headerStyle: {shadowOpacity: 0, elevation: 0},
   });
+  const [isAuth] = useState<boolean>(true);
 
   return (
     <RootStack.Navigator>
       <RootStack.Group screenOptions={defaultOptions}>
         {Object.entries({
           ...commonScreens,
+          ...(isAuth ? userScreens : notLoggedInScreens),
         }).map(([name, component]: any) => (
           <RootStack.Screen
             key={name}

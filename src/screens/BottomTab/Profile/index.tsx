@@ -8,7 +8,7 @@ import UserItems from './Items';
 import ItemHeader from '@components/Avatar/ItemHeader';
 import styles from './styles';
 const Tab = createMaterialTopTabNavigator();
-const Profile = ({route}: any) => {
+const UserProfile = ({route}: any) => {
   const {
     user: {title, coverImage, image, verified},
   } = route.params;
@@ -88,4 +88,4 @@ const Profile = ({route}: any) => {
   );
 };
 
-export default Profile;
+export default UserProfile;

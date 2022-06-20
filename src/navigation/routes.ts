@@ -7,7 +7,19 @@ import BottomTabNavigation from './BottomTab';
 export const commonScreens = {
   BottomTab: BottomTabNavigation,
 };
+export const userScreens = {
+  Home: BottomTab.Home,
+  Stats: BottomTab.Stats,
+  Search: BottomTab.Search,
+  Connect: BottomTab.Connect,
+  More: BottomTab.More,
+  UserProfile: BottomTab.Profile,
+};
 
+/**
+ * Screens user when user not logged in
+ */
+export const notLoggedInScreens = {};
 /**
  * Modal
  */
