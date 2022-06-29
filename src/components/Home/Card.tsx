@@ -5,12 +5,24 @@ import {CateItemType} from './types';
 import {styles} from './Styles/CardStyles';
 import FastImage from 'react-native-fast-image';
 
-const Card: React.FC<CateItemType> = ({title, image, size, type}) => {
+const Card: React.FC<CateItemType> = ({
+  title,
+  image,
+  coverImage,
+  size,
+  type,
+}) => {
   const handleNavigation = () => {
     if (type === 'category') {
       navigate('Category', {category: image}, title);
     } else {
-      navigate('UserProfile', {user: image}, title);
+      navigate('UserProfile', {
+        user: {
+          title,
+          image: image,
+          coverImage: coverImage,
+        },
+      });
     }
   };
   return (

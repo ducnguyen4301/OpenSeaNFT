@@ -3,4 +3,5 @@ export interface CateItemType {
   image: any;
   type: string;
   size: number;
+  coverImage: any;
 }

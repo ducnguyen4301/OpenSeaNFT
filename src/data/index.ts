@@ -35,6 +35,7 @@ export default {
     {
       title: "Gab's Beach Club",
       image: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
+      coverImage: 'https://picsum.photos/200?random=' + (Math.random() * 9 + 1),
       size: 210,
     },
     {
